@@ -21,7 +21,6 @@ vim.keymap.set("n", "n", "nzzzv")
 -- Standard Reverse Search + center the cursor on the screen after moving to the previous match
 vim.keymap.set("n", "N", "Nzzzv")
 --
-
 --
 --
 --
