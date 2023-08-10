@@ -1,4 +1,6 @@
+-- Current font of preference: JetBrainsMono Nerd Font Mono
 -- See `:help vim.o`
+--
 -- Indention options
 -- Sets the number of spaces a <Tab> character occupies
 vim.o.tabstop = 4
