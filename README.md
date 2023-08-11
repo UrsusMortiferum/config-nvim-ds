@@ -13,4 +13,7 @@ Goal:
 
 * Create an update tool for the purposes related to my job and other personal projects
 
+Other:
+
+* Current font of preference: JetBrainsMono Nerd Font Mono
 
