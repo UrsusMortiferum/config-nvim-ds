@@ -1,8 +1,7 @@
+require("ursusmortiferum.plugins")
 require("ursusmortiferum.remap")
 require("ursusmortiferum.set")
---
--- https://github.com/folke/lazy.nvim
--- `:help lazy.nvim.txt` for more info
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -15,23 +14,10 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
---
--- Welp... Beginning of the 'proper' config UP - DOWN? base for scrapping
---
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
+
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
 
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  -- Welp... Beginning of the 'proper' config UP - DOWN? base for scrapping
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -50,38 +36,6 @@ require('lazy').setup({
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
-  },
-
-  -- Database-related
-  'tpope/vim-dadbod',
-  'kristijanhusak/vim-dadbod-ui',
-
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',
-
-      -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
-    },
-  },
-  'github/copilot.vim',
-
-  {
-    -- CodeStats
-    "YannickFricke/codestats.nvim",
-    config = function()
-      require('codestats-nvim').setup({
-        token = "SFMyNTY.VlhKemRYTmZUVzl5ZEdsbVpYSjFiUT09IyNNakEwT0RRPQ.4Eg9Lr8VH94F9SP1Ul7IYGnMEr-fdKfxw1kZjvEmey8"
-      })
-    end,
-    requires = { 'nvim-lua/plenary.nvim' }
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -107,43 +61,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    'folke/tokyonight.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd [[
-        colorscheme tokyonight-night
-        highlight Normal guibg=NONE ctermbg=NONE
-        highlight signcolumn guibg=NONE ctermbg=NONE
-      ]]
-    end,
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'tokyonight',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',         opts = {} },
 
@@ -163,29 +80,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
-
-  -- "A useless plugin that might help you cope with stubbornly tests or overall lack of sense in life." ~ Eandrju
-  { 'Eandrju/cellular-automaton.nvim' },
-
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
-
-  -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'ursusmortiferum.plugins' },
 }, {})
 
