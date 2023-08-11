@@ -8,6 +8,7 @@ Let's start with reasons for existence of this repo:
 * Besides working config - goal is to have multi-file clear and well documented config
 * Focus on the Data-related activities - Python (output similar to JupyterLab) + DB-related activities #SQL
 * There's a chance that future updates will push me towards creation of some plugins for the nvim judging on the current "market" in terms of the data science-related solutions for nvim
+* Of course, of course, backup of config, useful when you need to work on multiple machines
 
 Goal:
 
