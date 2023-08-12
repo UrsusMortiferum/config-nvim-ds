@@ -1,6 +1,6 @@
 require("ursusmortiferum.plugins")
-require("ursusmortiferum.remap")
 require("ursusmortiferum.set")
+require("ursusmortiferum.remap")
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -16,8 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-
-  -- Welp... Beginning of the 'proper' config UP - DOWN? base for scrapping
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -38,94 +36,10 @@ require('lazy').setup({
     },
   },
 
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',          opts = {} },
-  {
-    -- Adds git releated signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-      end,
-    },
-  },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
-
-  -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-  -- Only load if `make` is available. Make sure you have the system
-  -- requirements installed.
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
-
   { import = 'ursusmortiferum.plugins' },
 }, {})
 
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
-    },
-  },
-}
-
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
-
--- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+-- require("ursusmortiferum.remap")
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`

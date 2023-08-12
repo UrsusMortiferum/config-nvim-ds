@@ -16,6 +16,25 @@ return {
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  {
+    -- Adds git releated signs to the gutter, as well as utilities for managing changes
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+      on_attach = function(bufnr)
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
+          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+      end,
+    },
+  },
 
   'tpope/vim-sleuth',
 
@@ -87,6 +106,39 @@ return {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+  },
+
+  { 'numToStr/Comment.nvim',          opts = {} },
+
+  {
+    'folke/which-key.nvim',
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
+
+  -- Fuzzy Finder (files, lsp, etc)
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons' }
+  },
+
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+  -- Only load if `make` is available. Make sure you have the system
+  -- requirements installed.
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    -- NOTE: If you are having trouble with this installation,
+    --       refer to the README for telescope-fzf-native for more instructions.
+    build = 'make',
+    cond = function()
+      return vim.fn.executable 'make' == 1
+    end,
   },
 
 }
