@@ -18,3 +18,7 @@ Other:
 
 * Current font of preference: JetBrainsMono Nerd Font Mono
 
+To Do:
+
+* add plugin for the DB-related activities #SQL (LSP, Formatting, Linter, Clear GUI without cluttering, performance measures, etc.)
+* add plugin for the Jupyter-like experience for the data exploration (not necessary dedicated to python)
