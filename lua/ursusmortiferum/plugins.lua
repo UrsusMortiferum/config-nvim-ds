@@ -123,7 +123,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim', config = true }, --,  dependencies = { 'nanotee/sqls.nvim' } },
       'williamboman/mason-lspconfig.nvim',
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
@@ -151,5 +151,17 @@ return {
       return vim.fn.executable 'make' == 1
     end,
   },
+
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   version = "*",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = function()
+  --     require("nvim-tree").setup {}
+  --   end,
+  -- }
 
 }
