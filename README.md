@@ -1,6 +1,6 @@
 # config-nvim-ds
 
-### Introduction
+## Introduction
 
 Let's start with reasons for existence of this repo:
 
@@ -10,15 +10,15 @@ Let's start with reasons for existence of this repo:
 * There's a chance that future updates will push me towards creation of some plugins for the nvim judging on the current "market" in terms of the data science-related solutions for nvim
 * Of course, of course, backup of config, useful when you need to work on multiple machines
 
-Goal:
+## Goal:
 
 * Create an update tool for the purposes related to my job and other personal projects
 
-Other:
+## Other:
 
 * Current font of preference: JetBrainsMono Nerd Font Mono
 
-To Do:
+## To Do:
 
 * add plugin for the DB-related activities #SQL (LSP, Formatting, Linter, Clear GUI without cluttering, performance measures, etc.)
 * add plugin for the Jupyter-like experience for the data exploration (not necessary dedicated to python)
