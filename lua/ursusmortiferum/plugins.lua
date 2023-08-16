@@ -39,9 +39,13 @@ return {
   'tpope/vim-sleuth',
 
   -- Database related plugins
-  'tpope/vim-dadbod',
-  'kristijanhusak/vim-dadbod-ui',
-
+  {
+    'tpope/vim-dadbod',
+    dependencies = {
+      'kristijanhusak/vim-dadbod-ui',
+      'abenz1267/nvim-databasehelper',
+    },
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
