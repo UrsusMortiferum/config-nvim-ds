@@ -45,6 +45,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+function ListToSQLFragment(elements)
+    local fragment = "(" .. table.concat(elements, "', '") .. "')"
+    return fragment
+end
+
 -- See `:help vim.o`
 -- Sync clipboard between OS and Neovim.
 -- vim.o.clipboard = 'unnamedplus'
