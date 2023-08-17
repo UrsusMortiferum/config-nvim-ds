@@ -25,7 +25,7 @@ end)
 
 keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-keymap('n', '<leader>f', vim.lsp.buf.format, { desc = '[F]ormat' })
+keymap('n', '<leader>ff', vim.lsp.buf.format, { desc = '[F]ormat' })
 
 keymap('i', '<C-c>', '<Esc>')
 
