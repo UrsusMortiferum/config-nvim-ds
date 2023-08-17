@@ -27,3 +27,8 @@ function M.ListToQuotedParantheses()
 end
 
 return M
+
+-- function ListToSQLFragment(elements)
+--  local fragment = "(" .. table.concat(elements, "', '") .. "')"
+--  return fragment
+-- end

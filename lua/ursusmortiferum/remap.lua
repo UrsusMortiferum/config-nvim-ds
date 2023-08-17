@@ -30,7 +30,11 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
 -- Yes, make it rain -> it may help you cope with the reality of the world
-vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = 'Make it rain' });
+vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = 'Make it rain' })
+
+vim.keymap.set('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
+vim.keymap.set('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Refresh NvimTree' })
+
 --
 --
 --
