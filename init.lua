@@ -1,1 +1,1 @@
-require('ursusmortiferum')
+require('config')
