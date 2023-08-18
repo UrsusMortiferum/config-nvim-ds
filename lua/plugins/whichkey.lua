@@ -19,6 +19,16 @@ return {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = {}
+        opts = {
+            defaults = {
+                prefix = '<leader>',
+                mode = 'n',
+                h = { name = '+Harpoon' },
+            },
+        },
+        config = function(_, opts)
+            local wk = require 'which-key'
+            wk.register(opts.defaults)
+        end,
     },
 }
