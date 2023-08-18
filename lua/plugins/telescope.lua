@@ -1,5 +1,4 @@
 return {
-
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
@@ -20,5 +19,4 @@ return {
             return vim.fn.executable 'make' == 1
         end,
     },
-
 }

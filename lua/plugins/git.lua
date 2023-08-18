@@ -1,5 +1,4 @@
 return {
-
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',
     {
@@ -22,5 +21,4 @@ return {
             end,
         },
     },
-
 }

@@ -1,5 +1,4 @@
 return {
-
     {
         "YannickFricke/codestats.nvim",
         config = function()
@@ -10,5 +9,4 @@ return {
         end,
         requires = { 'nvim-lua/plenary.nvim' }
     },
-
 }

@@ -1,5 +1,4 @@
 return {
-
     {
         'folke/tokyonight.nvim',
         lazy = false,
@@ -12,7 +11,6 @@ return {
       ]]
         end,
     },
-
     {
         'nvim-lualine/lualine.nvim',
         opts = {
@@ -25,5 +23,4 @@ return {
             },
         },
     },
-
 }

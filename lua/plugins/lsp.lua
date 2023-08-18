@@ -1,5 +1,4 @@
 return {
-
     {
         'neovim/nvim-lspconfig',
         dependencies = {
@@ -10,5 +9,4 @@ return {
             { 'folke/neodev.nvim',       opts = {} },
         },
     },
-
 }

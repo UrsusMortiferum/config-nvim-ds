@@ -1,5 +1,4 @@
 return {
-
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -11,5 +10,4 @@ return {
             require("nvim-tree").setup {}
         end,
     }
-
 }

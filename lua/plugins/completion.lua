@@ -1,5 +1,4 @@
 return {
-
     {
         -- Autocompletion
         'hrsh7th/nvim-cmp',
@@ -18,5 +17,4 @@ return {
             'kristijanhusak/vim-dadbod-completion'
         },
     },
-
 }
