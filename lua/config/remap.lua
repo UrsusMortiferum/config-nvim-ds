@@ -34,6 +34,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 -- Yes, make it rain -> it may help you cope with the reality of the world
 keymap('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = 'Make it rain' })
 
+keymap('n', '<leader>fn', '<:enew<CR>', { desc = 'Create an empty buffer' })
+
 keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 keymap('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Refresh NvimTree' })
 --
