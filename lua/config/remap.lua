@@ -5,36 +5,40 @@ local keymap = vim.keymap.set
 
 keymap('n', '<leader>pv', vim.cmd.Ex, { desc = 'Explore' })
 
-keymap('v', 'J', ":m '>+1<CR>gv=gv")
-keymap('v', 'K', ":m '<-2<CR>gv=gv")
-
 keymap('n', '<C-d>', '<C-d>zz')
 keymap('n', '<C-u>', '<C-u>zz')
 
 keymap('n', 'n', 'nzzzv')
 keymap('n', 'N', 'Nzzzv')
 
-keymap('x', '<leader>p', [["_dP]])
+keymap('n', '<leader>ha', function() require('harpoon.mark').add_file() end, { desc = 'Add File' })
+keymap('n', '<leader>hm', function() require('harpoon.ui').toggle_quick_menu() end, { desc = 'File Menu' })
+keymap('n', '<leader>hc', function() require('harpoon.cmd-ui').toggle_quick_menu() end, { desc = 'Command Menu' })
+keymap('n', '<leader>1', function() require('harpoon.ui').nav_file(1) end, { desc = 'File 1' })
+keymap('n', '<leader>2', function() require('harpoon.ui').nav_file(2) end, { desc = 'File 2' })
+keymap('n', '<leader>3', function() require('harpoon.ui').nav_file(3) end, { desc = 'File 3' })
+keymap('n', '<leader>4', function() require('harpoon.term').gotoTerminal(1) end, { desc = 'Terminal 1' })
+keymap('n', '<leader>5', function() require('harpoon.term').gotoTerminal(2) end, { desc = 'Terminal 2' })
+keymap('n', '<leader>Y', [["+Y]], { desc = 'Copy line to OS clipboard' })
+keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = 'Substitute word under cursor' })
+keymap('n', '<leader>ff', vim.lsp.buf.format, { desc = '[F]ile [F]ormat' })
+keymap('n', '<leader>fn', '<:enew<CR>', { desc = 'Create an empty buffer' })
+-- Yes, make it rain -> it may help you cope with the reality of the world
+keymap('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = '[M]ake it [r]ain' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-keymap('n', '<leader>Y', [["+Y]])
+keymap({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy selection to OS clipboard' })
+keymap({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete selection' })
+
+keymap('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+keymap('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+keymap('v', '<leader>p', [["_dP]], { desc = 'Paste over selection' })
 
 keymap('n', '<leader><leader>', function()
     vim.cmd('so')
 end)
 
-keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-keymap('n', '<leader>ff', vim.lsp.buf.format, { desc = '[F]ormat' })
-
 keymap('i', '<C-c>', '<Esc>')
-
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
-
--- Yes, make it rain -> it may help you cope with the reality of the world
-keymap('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = 'Make it rain' })
-
-keymap('n', '<leader>fn', '<:enew<CR>', { desc = 'Create an empty buffer' })
 
 keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 keymap('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Refresh NvimTree' })
