@@ -1,1 +1,6 @@
-require('config')
+-- require 'config'
+require 'config.settings'
+require 'config.remap'
+require 'config.functions'
+require 'config.autocmds'
+require 'config.lazy'
