@@ -4,3 +4,20 @@ require 'config.remap'
 require 'config.functions'
 require 'config.autocmds'
 require 'config.lazy'
+
+function PythonAssignment()
+    local sys_info = vim.loop.os_uname()
+    local os_type = sys_info.sysname
+    print(os_type)
+    local home = os.getenv('HOME') or os.getenv('USERPROFILE')
+
+    if os_type == 'Windows_NT' then
+        local path = home .. '\\AppData\\Local\\anaconda3\\envs\\py3.11.4'
+        print('Setting python3_host_prog:', path)
+        vim.g.python3_host_prog = path
+    else
+        print('You still need to specify MacOS + define the path')
+    end
+end
+
+PythonAssignment()
