@@ -12,7 +12,7 @@ function PythonAssignment()
     local home = os.getenv('HOME') or os.getenv('USERPROFILE')
 
     if os_type == 'Windows_NT' then
-        local path = home .. '\\AppData\\Local\\anaconda3\\envs\\py3.11.4'
+        local path = home .. '\\AppData\\Local\\anaconda3\\envs\\py3.11.4\\python.exe'
         print('Setting python3_host_prog:', path)
         vim.g.python3_host_prog = path
     else
