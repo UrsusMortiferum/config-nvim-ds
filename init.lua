@@ -16,7 +16,9 @@ function PythonAssignment()
         print('Setting python3_host_prog:', path)
         vim.g.python3_host_prog = path
     else
-        print('You still need to specify MacOS + define the path')
+        local path = home .. '/anaconda3/envs/py3.11.3/bin/python'
+        print('Setting python3_host_prog:', path)
+        vim.g.python3_host_prog = path
     end
 end
 
