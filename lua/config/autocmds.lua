@@ -36,3 +36,11 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.opt_local.spell = true
     end,
 })
+
+vim.cmd [[
+augroup AutoOrderBuffers
+    autocmd!
+    autocmd BufWinEnter * :BufferOrderByLanguage
+    autocmd BufWinLeave * :BufferOrderByLanguage
+augroup END
+]]

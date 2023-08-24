@@ -1,10 +1,3 @@
--- require 'config'
-require 'config.settings'
-require 'config.remap'
-require 'config.functions'
-require 'config.autocmds'
-require 'config.lazy'
-
 function PythonAssignment()
     local sys_info = vim.loop.os_uname()
     local os_type = sys_info.sysname
@@ -23,3 +16,10 @@ function PythonAssignment()
 end
 
 PythonAssignment()
+
+-- require 'config'
+require 'config.settings'
+require 'config.remap'
+require 'config.functions'
+require 'config.autocmds'
+require 'config.lazy'
