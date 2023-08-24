@@ -8,6 +8,13 @@ require('telescope').setup {
             },
         },
     },
+    {
+        extensions = {
+            file_browser = {
+                hijack_netrw = true,
+            },
+        },
+    },
 }
 
 pcall(require('telescope').load_extension, 'fzf')
