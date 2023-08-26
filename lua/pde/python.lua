@@ -1,34 +1,34 @@
--- local pde_python = require('config.pde_config').python
+-- local pde_python = require("config.pde_config").python
 -- if not pde_python then
 --     return {}
 -- end
--- if not require('config').pde.python then
+-- if not require("config").pde.python then
 --     return {}
 -- end
 --
 -- return {
 --     {
---         'nvim-treesitter/nvim-treesitter',
+--         "nvim-treesitter/nvim-treesitter",
 --         opts = function(_, opts)
 --             vim.list_extend(opts.ensure_installed, {
---                 'python',
+--                 "python",
 --             })
 --         end,
 --     },
 --     {
---         'jose-elias-alvarez/null-ls.nvim',
+--         "jose-elias-alvarez/null-ls.nvim",
 --         opts = function(_, opts)
---             local nls = require('null-ls')
+--             local nls = require("null-ls")
 --             table.insert(opts.sources, nls.builtins.formatting.black)
 --         end,
 --     },
 --     {
---         'williamboman/mason.nvim',
+--         "williamboman/mason.nvim",
 --         opts = function(_, opts)
 --             vim.list_extend(opts.ensure_installed, {
---                 'black',
---                 'ruff',
---                 'mypy',
+--                 "black",
+--                 "ruff",
+--                 "mypy",
 --             })
 --         end,
 --     },

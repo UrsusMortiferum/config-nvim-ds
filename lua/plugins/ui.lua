@@ -1,6 +1,6 @@
 return {
     {
-        'folke/tokyonight.nvim',
+        "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
@@ -12,34 +12,34 @@ return {
         end,
     },
     {
-        'nvim-lualine/lualine.nvim',
+        "nvim-lualine/lualine.nvim",
         dependencies = {
-            'meuter/lualine-so-fancy.nvim',
-            'nvim-tree/nvim-web-devicons'
+            "meuter/lualine-so-fancy.nvim",
+            "nvim-tree/nvim-web-devicons"
         },
         opts = {
             options = {
                 icons_enabled = true,
-                theme = 'tokyonight',
-                -- component_separators = '|'
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
+                theme = "tokyonight",
+                -- component_separators = "|"
+                component_separators = { left = "", right = "" },
+                section_separators = { left = "", right = "" },
             },
             globalstatus = true,
             refresh = { statusline = 100 },
             sections = {
                 lualine_a = {
-                    { 'fancy_mode', width = 9 },
+                    { "fancy_mode", width = 9 },
                 },
                 lualine_b = {
-                    'branch', 'diff'
+                    "branch", "diff"
                 },
                 lualine_c = {
-                    { 'filename', file_status = false, path = 1 }
+                    { "filename", file_status = false, path = 1 }
                 },
-                lualine_x = { 'diagnostics', 'encoding', 'fileformat', 'progress', 'fancy_location' },
-                lualine_y = { 'fancy_filetype' },
-                lualine_z = { 'fancy_lsp_servers' },
+                lualine_x = { "diagnostics", "encoding", "fileformat", "progress", "fancy_location" },
+                lualine_y = { "fancy_filetype" },
+                lualine_z = { "fancy_lsp_servers" },
             },
             inactive_sections = {
                 lualine_a = {},

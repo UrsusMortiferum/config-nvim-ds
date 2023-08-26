@@ -11,4 +11,4 @@ function ListToSQLString()
     vim.api.nvim_buf_set_lines(0, s_line - 1, e_line, false, { fstring })
 end
 
-vim.api.nvim_set_keymap('v', '<leader>b', ':lua ListToSQLString()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>b", ":lua ListToSQLString()<CR>", { noremap = true, silent = true })

@@ -1,18 +1,18 @@
 return {
     -- {
-    --     'mrjones2014/legendary.nvim',
+    --     "mrjones2014/legendary.nvim",
     --     event = "VeryLazy",
     --     keys = {
-    --         { '<leader>cp', '<cmd>Legendary<CR>', desc = '[C]ommand [P]alette' },
+    --         { "<leader>cp", "<cmd>Legendary<CR>", desc = "[C]ommand [P]alette" },
     --     },
     --     opts = {
     --         which_key = { auto_register = true },
     --     },
     -- },
     {
-        'folke/which-key.nvim',
+        "folke/which-key.nvim",
         -- dependencies = {
-        --     'mrjones2014/legendary.nvim',
+        --     "mrjones2014/legendary.nvim",
         -- },
         event = "VeryLazy",
         init = function()
@@ -21,15 +21,15 @@ return {
         end,
         opts = {
             defaults = {
-                prefix = '<leader>',
-                mode = 'n',
-                h = { name = '+Harpoon' },
+                prefix = "<leader>",
+                mode = "n",
+                h = { name = "+Harpoon" },
             },
         },
         -- config = function(_, opts)
-        --     local wk = require 'which-key'
-        --     local keymaps = require 'config.remap'
-        --     local prefixes = require 'config.prefixes'
+        --     local wk = require "which-key"
+        --     local keymaps = require "config.remap"
+        --     local prefixes = require "config.prefixes"
         --     wk.register(opts.defaults)
         --     wk.register(keymaps.keymaps)
         --     wk.register(keymaps.prefixes)
