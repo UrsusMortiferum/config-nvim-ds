@@ -27,8 +27,9 @@ keymap("n", "<leader>fn", "<:enew<CR>", { desc = "Create an empty buffer" })
 -- Yes, make it rain -> it may help you cope with the reality of the world
 keymap("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "[M]ake it [r]ain" })
 -- le duck
--- keymap('n', '<leader>dd', '<cmd> lua require('duck').hatch('🎅', 1)<cr>')
--- keymap('n', '<leader>dk', '<cmd> lua require('duck').cook() end, {})
+keymap("n", "<leader>dd", "<cmd>lua require('duck').hatch('🦖', 10)<cr>", { desc = "Spawn a dinosaur" })
+keymap("n", "<leader>dd", "<cmd>lua require('duck').hatch('🦀', 10)<cr>", { desc = "Spawn a crab" })
+keymap("n", "<leader>dk", "<cmd>lua require('duck').cook()<cr>", { desc = "Kill all" })
 
 keymap({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy selection to OS clipboard" })
 keymap({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete selection" })
