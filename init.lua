@@ -19,9 +19,14 @@ end
 
 PythonAssignment()
 
--- require "config"
 require "config.settings"
-require "config.remap"
-require "config.functions"
-require "config.autocmds"
 require "config.lazy"
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    callback = function()
+        require "config.remap"
+        require "config.functions"
+        require "config.autocmds"
+    end,
+})

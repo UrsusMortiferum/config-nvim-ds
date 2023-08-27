@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local keymap = vim.keymap.set
 
 keymap("n", "<leader>pv", vim.cmd.Ex, { desc = "Explore" })

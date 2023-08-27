@@ -11,13 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup {
-    spec = {
-        { import = "plugins" },
-        -- { import = "pde" },
-    },
-    --    defaults = {
-    --        lazy = true },
+require("lazy").setup("plugins", {
+    -- defaults = { lazy = true, version = nil },
     dev = {
         -- directory where you store your local plugin projects
         path = "~/projects",
@@ -25,24 +20,22 @@ require("lazy").setup {
         patterns = {},    -- For example {"folke"}
         fallback = false, -- Fallback to git when local plugin doesn"t exist
     },
-    install = {
-        missing = true,
-        colorscheme = { "tokyonight-night" },
-    },
-    performance = {
-        rtp = {
-            disabled_plugins = {
-                -- "gzip",
-                -- "matchit",
-                -- "matchparen",
-                -- "netrwPlugin",
-                -- "tarPlugin",
-                -- "tohtml",
-                -- "tutor",
-                -- "zipPlugin",
-            },
-        },
-    },
-}
+    install = { missing = true, colorscheme = { "tokyonight-night" } },
+    -- checker = { enabled = true },
+    -- performance = {
+    --     rtp = {
+    --         disabled_plugins = {
+    -- "gzip",
+    -- "matchit",
+    -- "matchparen",
+    -- "netrwPlugin",
+    -- "tarPlugin",
+    -- "tohtml",
+    -- "tutor",
+    -- "zipPlugin",
+    --         },
+    --     },
+    -- },
+})
 
 vim.keymap.set("n", "<leader>ll", "<cmd>:Lazy<CR>", { desc = "[L]aunch [L]azy" })

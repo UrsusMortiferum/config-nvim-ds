@@ -11,4 +11,12 @@ return {
             { "jose-elias-alvarez/null-ls.nvim", opts = {} },
         },
     },
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        cmd = "Mason",
+        keys = {
+            { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+        },
+    },
 }

@@ -1,7 +1,10 @@
 return {
+    "nvim-lua/plenary.nvim",
+    { "nvim-tree/nvim-web-devicons", config = true },
     "tpope/vim-sleuth",
     {
         "lukas-reineke/indent-blankline.nvim",
+        event = "BufReadPre",
         opts = {
             char = "┊",
             space_char_blankline = " ",
@@ -10,7 +13,33 @@ return {
             show_current_context_start = true,
         },
     },
-    { "numToStr/Comment.nvim", opts = {} },
+    { "numToStr/Comment.nvim",       opts = {} },
+    {
+        "stevearc/dressing.nvim",
+        event = "VeryLazy",
+        config = true,
+    },
+    {
+        "sindrets/diffview.nvim",
+        cmd = {
+            "DiffviewOpen",
+            "DiffviewClose",
+            "DiffviewToggleFiles",
+            "DiffviewFocusFiles",
+        },
+        config = true,
+    },
+    {
+        "TimUntersberger/neogit",
+        cmd = "Neogit",
+        config = {
+            integrations = { diffview = true },
+        },
+        keys = {
+            { "<leader>gs", "<cmd>Neogit kind=floating<cr>", desc = "Neogit status" },
+        },
+    },
+
     -- {
     --     "stevearc/dressing.nvim",
     --     event = "VeryLazy",
