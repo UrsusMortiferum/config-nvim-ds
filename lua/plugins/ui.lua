@@ -13,6 +13,7 @@ return {
     },
     {
         "nvim-lualine/lualine.nvim",
+        lazy = false,
         dependencies = {
             "meuter/lualine-so-fancy.nvim",
             "nvim-tree/nvim-web-devicons"

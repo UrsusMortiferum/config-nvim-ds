@@ -13,12 +13,26 @@ return {
             show_current_context_start = true,
         },
     },
-    { "numToStr/Comment.nvim",       opts = {} },
+    {
+        "numToStr/Comment.nvim",
+        opts = {},
+        lazy = false,
+    },
     {
         "stevearc/dressing.nvim",
         event = "VeryLazy",
-        config = true,
+        opts = {
+            input = { relative = "editor" },
+            select = {
+                backend = { "telescope", "fzf", "builtin" },
+            },
+        },
     },
+    -- {
+    --     "stevearc/dressing.nvim",
+    --     event = "VeryLazy",
+    --     config = true,
+    -- },
     {
         "sindrets/diffview.nvim",
         cmd = {
@@ -39,15 +53,4 @@ return {
             { "<leader>gs", "<cmd>Neogit kind=floating<cr>", desc = "Neogit status" },
         },
     },
-
-    -- {
-    --     "stevearc/dressing.nvim",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         input = { relative = "editor" },
-    --         select = {
-    --             backend = { "telescope", "fzf", "builtin" },
-    --         },
-    --     },
-    -- },
 }

@@ -8,6 +8,7 @@ return {
     --     },
     {
         "YannickFricke/codestats.nvim",
+        lazy = false,
         depedencies = {
             "nvim-lua/plenary.nvim",
         },

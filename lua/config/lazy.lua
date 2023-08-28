@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-    -- defaults = { lazy = true, version = nil },
+    defaults = { lazy = true, version = nil },
     dev = {
         -- directory where you store your local plugin projects
         path = "~/projects",

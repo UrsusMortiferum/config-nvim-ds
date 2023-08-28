@@ -8,25 +8,11 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
-keymap("n", "<leader>ha", function() require("harpoon.mark").add_file() end, { desc = "Add File" })
-keymap("n", "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "File Menu" })
-keymap("n", "<leader>hc", function() require("harpoon.cmd-ui").toggle_quick_menu() end, { desc = "Command Menu" })
-keymap("n", "<leader>1", function() require("harpoon.ui").nav_file(1) end, { desc = "File 1" })
-keymap("n", "<leader>2", function() require("harpoon.ui").nav_file(2) end, { desc = "File 2" })
-keymap("n", "<leader>3", function() require("harpoon.ui").nav_file(3) end, { desc = "File 3" })
-keymap("n", "<leader>4", function() require("harpoon.term").gotoTerminal(1) end, { desc = "Terminal 1" })
-keymap("n", "<leader>5", function() require("harpoon.term").gotoTerminal(2) end, { desc = "Terminal 2" })
 keymap("n", "<leader>Y", [["+Y]], { desc = "Copy line to OS clipboard" })
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Substitute word under cursor" })
 keymap("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ile [F]ormat" })
 keymap("n", "<leader>fn", "<:enew<CR>", { desc = "Create an empty buffer" })
--- Yes, make it rain -> it may help you cope with the reality of the world
-keymap("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "[M]ake it [r]ain" })
--- le duck
-keymap("n", "<leader>dd", "<cmd>lua require('duck').hatch('🦖', 10)<cr>", { desc = "Spawn a dinosaur" })
-keymap("n", "<leader>dd", "<cmd>lua require('duck').hatch('🦀', 10)<cr>", { desc = "Spawn a crab" })
-keymap("n", "<leader>dk", "<cmd>lua require('duck').cook()<cr>", { desc = "Kill all" })
 
 keymap({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy selection to OS clipboard" })
 keymap({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete selection" })
