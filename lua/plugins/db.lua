@@ -1,11 +1,11 @@
 return {
     {
         "tpope/vim-dadbod",
-        event = "BufReadPre",
+        ft = "sql",
     },
     {
         "kristijanhusak/vim-dadbod-ui",
-        event = "BufReadPre",
+        ft = "sql",
         requires = { "tpope/vim-dadbod" },
     },
 }
