@@ -1,6 +1,12 @@
 return {
-    "tpope/vim-fugitive",
-    "tpope/vim-rhubarb",
+    {
+        "tpope/vim-fugitive",
+        lazy = false,
+    },
+    {
+        "tpope/vim-rhubarb",
+        lazy = false,
+    },
     {
         "lewis6991/gitsigns.nvim",
         opts = {

@@ -9,7 +9,7 @@ keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
 keymap("n", "<leader>Y", [["+Y]], { desc = "Copy line to OS clipboard" })
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+keymap("n", "<leader>sw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Substitute word under cursor" })
 keymap("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ile [F]ormat" })
 keymap("n", "<leader>fn", "<:enew<CR>", { desc = "Create an empty buffer" })
@@ -32,9 +32,9 @@ keymap("n", "<leader>b7", "<cmd>BufferGoto 7<CR>", { desc = "Go to buffer 7" })
 keymap("n", "<leader>b8", "<cmd>BufferGoto 8<CR>", { desc = "Go to buffer 8" })
 keymap("n", "<leader>b9", "<cmd>BufferGoto 9<CR>", { desc = "Go to buffer 9" })
 
-keymap("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+-- keymap("n", "<leader><leader>", function()
+--     vim.cmd("so")
+-- end)
 
 keymap("i", "<C-c>", "<Esc>")
 
